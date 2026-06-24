@@ -15,3 +15,5 @@ export const configValidationSchema = Joi.object({
   // CORS
   CORS_ORIGINS: Joi.string().required(),
 });
+
+

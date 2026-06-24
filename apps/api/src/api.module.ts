@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { HealthModule } from './modules/health/health.module';
 import { CacheModule } from '@app/cache';
+import { JobsModule } from '@app/jobs';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -22,12 +24,18 @@ import { CacheModule } from '@app/cache';
     AppLoggerModule,
     CacheModule,
 
+    // jobs / queues
+    JobsModule,
+
     ThrottlerModule.forRoot([
       {
         ttl: configuration().throttle.ttl,
         limit: configuration().throttle.limit,
       }
     ]),
+
+    // scheduler
+    ScheduleModule.forRoot(),
 
     // observability
     ObservabilityModule,

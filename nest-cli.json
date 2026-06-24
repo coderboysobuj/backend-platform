@@ -53,6 +53,15 @@
         "tsConfigPath": "libs/config/tsconfig.lib.json"
       }
     },
+    "jobs": {
+      "type": "library",
+      "root": "libs/jobs",
+      "entryFile": "index",
+      "sourceRoot": "libs/jobs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/jobs/tsconfig.lib.json"
+      }
+    },
     "logger": {
       "type": "library",
       "root": "libs/logger",
@@ -69,6 +78,15 @@
       "sourceRoot": "libs/observability/src",
       "compilerOptions": {
         "tsConfigPath": "libs/observability/tsconfig.lib.json"
+      }
+    },
+    "scheduler": {
+      "type": "application",
+      "root": "apps/scheduler",
+      "entryFile": "main",
+      "sourceRoot": "apps/scheduler/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/scheduler/tsconfig.app.json"
       }
     }
   },
