@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { HealthModule } from './modules/health/health.module';
+import { CacheModule } from '@app/cache';
 
 @Module({
   imports: [
@@ -19,6 +20,8 @@ import { HealthModule } from './modules/health/health.module';
     }),
     // logging
     AppLoggerModule,
+    CacheModule,
+
     ThrottlerModule.forRoot([
       {
         ttl: configuration().throttle.ttl,

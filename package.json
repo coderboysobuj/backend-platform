@@ -32,6 +32,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
     "helmet": "^8.2.0",
+    "ioredis": "^5.11.1",
     "joi": "^18.2.3",
     "nest-winston": "^1.10.2",
     "reflect-metadata": "^0.2.2",
@@ -85,6 +86,7 @@
       "<rootDir>/apps/"
     ],
     "moduleNameMapper": {
+      "^@app/cache(|/.*)$": "<rootDir>/libs/cache/src/$1",
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
       "^@app/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
