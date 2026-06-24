@@ -1,8 +1,15 @@
+import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { SchedulerModule } from './scheduler.module';
+
+import { SchedulerAppModule } from './scheduler.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(SchedulerModule);
-  await app.listen(process.env.port ?? 3000);
+  const app = await NestFactory.create(SchedulerAppModule, {
+    logger: ['error', 'warn', 'log'],
+  });
+
+  await app.init();
+  Logger.log('Scheduler service started', 'SchedulerBootstrap');
 }
-bootstrap();
+
+void bootstrap();

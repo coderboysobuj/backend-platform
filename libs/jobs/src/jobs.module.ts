@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { QUEUE_NAMES } from './job.constants';
+import { JobDispatcher } from './job.dispatcher';
 
 /**
  * JobsModule — registers all BullMQ queues globally.
@@ -48,6 +49,7 @@ import { QUEUE_NAMES } from './job.constants';
       { name: QUEUE_NAMES.WEBHOOK },
     ),
   ],
-  exports: [BullModule],
+  providers: [JobDispatcher],
+  exports: [BullModule, JobDispatcher],
 })
 export class JobsModule {}
