@@ -15,7 +15,7 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
   const port = configService.get('app.port', 8080);
-  const apiVersion = configService.get('app.version', 1);
+  const apiVersion = configService.get('app.version', '1');
   const corsOrigins = configService.get('app.corsOrigins', []);
   const appName = configService.get('app.name', 'backend-platform');
   const nodeEnv = configService.get('app.env', 'development');
@@ -38,7 +38,7 @@ async function bootstrap() {
   // api versioning
   app.enableVersioning({
     type: VersioningType.URI,
-    defaultVersion: apiVersion,
+    defaultVersion: String(apiVersion),
   });
 
   // global prefix
