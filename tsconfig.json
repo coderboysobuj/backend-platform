@@ -46,6 +46,12 @@
       "@app/drizzle/*": [
         "libs/drizzle/src/*"
       ],
+      "@app/events": [
+        "libs/events/src"
+      ],
+      "@app/events/*": [
+        "libs/events/src/*"
+      ],
       "@app/jobs": [
         "libs/jobs/src"
       ],

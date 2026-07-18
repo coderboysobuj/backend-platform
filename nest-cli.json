@@ -62,6 +62,15 @@
         "tsConfigPath": "libs/drizzle/tsconfig.lib.json"
       }
     },
+    "events": {
+      "type": "library",
+      "root": "libs/events",
+      "entryFile": "index",
+      "sourceRoot": "libs/events/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/events/tsconfig.lib.json"
+      }
+    },
     "jobs": {
       "type": "library",
       "root": "libs/jobs",
