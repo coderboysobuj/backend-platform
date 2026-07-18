@@ -46,10 +46,12 @@
     "class-validator": "^0.15.1",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
+    "handlebars": "^4.7.9",
     "helmet": "^8.2.0",
     "ioredis": "^5.11.1",
     "joi": "^18.2.3",
     "nest-winston": "^1.10.2",
+    "nodemailer": "^9.0.3",
     "postgres": "^3.4.9",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -110,6 +112,7 @@
       "^@app/events(|/.*)$": "<rootDir>/libs/events/src/$1",
       "^@app/jobs(|/.*)$": "<rootDir>/libs/jobs/src/$1",
       "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
+      "^@app/mailer(|/.*)$": "<rootDir>/libs/mailer/src/$1",
       "^@app/observability(|/.*)$": "<rootDir>/libs/observability/src/$1",
       "^@app/shared-types(|/.*)$": "<rootDir>/libs/shared-types/src/$1"
     }

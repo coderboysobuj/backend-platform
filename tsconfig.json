@@ -64,6 +64,12 @@
       "@app/logger/*": [
         "libs/logger/src/*"
       ],
+      "@app/mailer": [
+        "libs/mailer/src"
+      ],
+      "@app/mailer/*": [
+        "libs/mailer/src/*"
+      ],
       "@app/observability": [
         "libs/observability/src"
       ],
