@@ -40,6 +40,12 @@
       "@app/config/*": [
         "libs/config/src/*"
       ],
+      "@app/drizzle": [
+        "libs/drizzle/src"
+      ],
+      "@app/drizzle/*": [
+        "libs/drizzle/src/*"
+      ],
       "@app/jobs": [
         "libs/jobs/src"
       ],
@@ -57,6 +63,12 @@
       ],
       "@app/observability/*": [
         "libs/observability/src/*"
+      ],
+      "@app/shared-types": [
+        "libs/shared-types/src"
+      ],
+      "@app/shared-types/*": [
+        "libs/shared-types/src/*"
       ]
     }
   }

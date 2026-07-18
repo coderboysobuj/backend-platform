@@ -53,6 +53,15 @@
         "tsConfigPath": "libs/config/tsconfig.lib.json"
       }
     },
+    "drizzle": {
+      "type": "library",
+      "root": "libs/drizzle",
+      "entryFile": "index",
+      "sourceRoot": "libs/drizzle/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/drizzle/tsconfig.lib.json"
+      }
+    },
     "jobs": {
       "type": "library",
       "root": "libs/jobs",
@@ -87,6 +96,15 @@
       "sourceRoot": "apps/scheduler/src",
       "compilerOptions": {
         "tsConfigPath": "apps/scheduler/tsconfig.app.json"
+      }
+    },
+    "shared-types": {
+      "type": "library",
+      "root": "libs/shared-types",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared-types/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared-types/tsconfig.lib.json"
       }
     },
     "worker": {

@@ -1,4 +1,21 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: platform-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: platform_user
+      POSTGRES_PASSWORD: platform_pass
+      POSTGRES_DB: platform_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U platform_user -d platform_db']
+      interval: 5s
+      timeout: 5s
+      retries: 10
   redis:
     image: redis:alpine
     container_name: platform-redis
@@ -28,6 +45,8 @@ services:
     profiles: ['tools']
 
 volumes:
+  postgres_data:
+    name: platform_v2_postgres
   redis_data:
     name: platform_redis_data
 
