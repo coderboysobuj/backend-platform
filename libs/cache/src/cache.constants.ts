@@ -1,4 +1,4 @@
-export const REDIS_CLIENT = 'REDIS_CLIENT';
+export const REDIS_CLIENT = Symbol('REDIS_CLIENT');
 
 export const CACHE_TTL = {
     ONE_MINUTE: 60,
