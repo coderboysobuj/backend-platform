@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface ApiSuccessResponse<T> {
-  success: true;
+  success: boolean;
   statusCode: number;
   data: T;
   timestamp: string;
