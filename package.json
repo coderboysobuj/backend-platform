@@ -52,7 +52,9 @@
     "joi": "^18.2.3",
     "nest-winston": "^1.10.2",
     "nodemailer": "^9.0.3",
+    "otplib": "^13.4.1",
     "postgres": "^3.4.9",
+    "qrcode": "^1.5.4",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "uuid": "^14.0.1",
@@ -67,6 +69,7 @@
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.0",
+    "@types/qrcode": "^1.5.6",
     "@types/supertest": "^7.0.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9.18.0",
@@ -114,7 +117,8 @@
       "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
       "^@app/mailer(|/.*)$": "<rootDir>/libs/mailer/src/$1",
       "^@app/observability(|/.*)$": "<rootDir>/libs/observability/src/$1",
-      "^@app/shared-types(|/.*)$": "<rootDir>/libs/shared-types/src/$1"
+      "^@app/shared-types(|/.*)$": "<rootDir>/libs/shared-types/src/$1",
+      "^@app/totp(|/.*)$": "<rootDir>/libs/totp/src/$1"
     }
   }
 }

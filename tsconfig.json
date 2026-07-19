@@ -81,6 +81,12 @@
       ],
       "@app/shared-types/*": [
         "libs/shared-types/src/*"
+      ],
+      "@app/totp": [
+        "libs/totp/src"
+      ],
+      "@app/totp/*": [
+        "libs/totp/src/*"
       ]
     }
   }

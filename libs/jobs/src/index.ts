@@ -3,7 +3,7 @@ export { JobDispatcher } from './job.dispatcher';
 export { QUEUE_NAMES, JOB_NAMES } from './job.constants';
 export type { QueueName, JobName } from './job.constants';
 export type {
-  SendEmailJobPayload,
-  AiTaskJobPayload,
-  AuditLogJobPayload,
+    SendEmailJobPayload,
+    AiTaskJobPayload,
+    AuditLogJobPayload,
 } from './job.dispatcher';

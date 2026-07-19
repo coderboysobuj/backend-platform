@@ -9,16 +9,16 @@ import { AppLoggerModule } from '@app/logger';
 import { AppScheduler } from './app.scheduler';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [configuration],
-      validationSchema: configValidationSchema,
-    }),
-    AppLoggerModule,
-    ScheduleModule.forRoot(),
-    JobsModule,
-  ],
-  providers: [AppScheduler],
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+            load: [configuration],
+            validationSchema: configValidationSchema,
+        }),
+        AppLoggerModule,
+        ScheduleModule.forRoot(),
+        JobsModule,
+    ],
+    providers: [AppScheduler],
 })
 export class SchedulerAppModule {}

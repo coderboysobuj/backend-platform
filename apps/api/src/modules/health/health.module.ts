@@ -7,25 +7,23 @@ import { ObservabilityModule } from '@app/observability';
 @ApiTags('health')
 @Controller('health')
 export class HealthController {
-  constructor(
-    private readonly healthService: AppHealthService,
-  ) {}
+    constructor(private readonly healthService: AppHealthService) {}
 
-  @Get()
-  @ApiOperation({ summary: 'Health check — all indicators' })
-  check() {
-    return this.healthService.check();
-  }
+    @Get()
+    @ApiOperation({ summary: 'Health check — all indicators' })
+    check() {
+        return this.healthService.check();
+    }
 
-  @Get('ping')
-  @ApiOperation({ summary: 'Simple liveness probe' })
-  ping() {
-    return { status: 'ok', timestamp: new Date().toISOString() };
-  }
+    @Get('ping')
+    @ApiOperation({ summary: 'Simple liveness probe' })
+    ping() {
+        return { status: 'ok', timestamp: new Date().toISOString() };
+    }
 }
 
 @Module({
-  imports: [ObservabilityModule],
-  controllers: [HealthController],
+    imports: [ObservabilityModule],
+    controllers: [HealthController],
 })
 export class HealthModule {}

@@ -10,39 +10,40 @@ import { JobsModule } from '@app/jobs';
 import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [configuration],
-      validationSchema: configValidationSchema,
-      validationOptions: {
-        allowUnknown: true,
-        abortEarly: false,
-      },
-    }),
-    // logging
-    AppLoggerModule,
-    CacheModule,
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+            load: [configuration],
+            validationSchema: configValidationSchema,
+            validationOptions: {
+                allowUnknown: true,
+                abortEarly: false,
+            },
+        }),
+        // logging
+        AppLoggerModule,
+        CacheModule,
 
-    // jobs / queues
-    JobsModule,
+        // jobs / queues
+        JobsModule,
 
-    ThrottlerModule.forRoot([
-      {
-        ttl: configuration().throttle.ttl,
-        limit: configuration().throttle.limit,
-      }
-    ]),
+        ThrottlerModule.forRoot([
+            {
+                ttl: configuration().throttle.ttl,
+                limit: configuration().throttle.limit,
+            },
+        ]),
 
-    // scheduler
-    ScheduleModule.forRoot(),
+        // scheduler
+        ScheduleModule.forRoot(),
 
-    // observability
-    ObservabilityModule,
+        // observability
+        ObservabilityModule,
 
-    // feature modules
-    HealthModule
-  ],
-  controllers: [],
-  providers: [], })
+        // feature modules
+        HealthModule,
+    ],
+    controllers: [],
+    providers: [],
+})
 export class ApiModule {}
