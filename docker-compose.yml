@@ -44,6 +44,15 @@ services:
         condition: service_healthy
     profiles: ['tools']
 
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: platform-mailhog
+    restart: unless-stopped
+    ports:
+      - '1025:1025'    # SMTP
+      - '8025:8025'    # Web UI → http://localhost:8025
+    profiles: ['tools']
+
 volumes:
   postgres_data:
     name: platform_v2_postgres
